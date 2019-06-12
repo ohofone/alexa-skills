@@ -1,0 +1,149 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "big o of one",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "dataTypeIntent",
+                    "slots": [
+                        {
+                            "name": "dataType",
+                            "type": "dataType",
+                            "samples": [
+                                "any",
+                                "string",
+                                "linked list",
+                                "array"
+                            ]
+                        },
+                        {
+                            "name": "difficulty",
+                            "type": "difficulty"
+                        }
+                    ],
+                    "samples": [
+                        "{dataType}",
+                        "{difficulty} question about {dataType}",
+                        "{difficulty} {dataType}",
+                        "ask me about {dataType} ",
+                        "I'd like a question about {dataType}",
+                        "give me a {dataType} question",
+                        "give me an {difficulty} {dataType} question",
+                        "I'd like an {difficulty} question about {dataType}",
+                        "ask me about {dataType} with difficulty {difficulty}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "dataType",
+                    "values": [
+                        {
+                            "id": "string",
+                            "name": {
+                                "value": "string",
+                                "synonyms": [
+                                    "strings"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "linkedlist",
+                            "name": {
+                                "value": "linked list",
+                                "synonyms": [
+                                    "linked lists"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "array",
+                            "name": {
+                                "value": "array",
+                                "synonyms": [
+                                    "lists",
+                                    "list",
+                                    "arrays"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "difficulty",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "anyDifficulty",
+                                "synonyms": [
+                                    "you pick",
+                                    "random",
+                                    "any"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "dataTypeIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "dataType",
+                            "type": "dataType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.785015710117.1463604870904"
+                            }
+                        },
+                        {
+                            "name": "difficulty",
+                            "type": "difficulty",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.785015710117.1463604870904",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please select a data structure."
+                    }
+                ]
+            }
+        ]
+    }
+}
