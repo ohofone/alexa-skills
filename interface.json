@@ -9,7 +9,25 @@
                 },
                 {
                     "name": "AMAZON.CancelIntent",
-                    "samples": []
+                    "samples": [
+                        "fuck meeeee",
+                        "you a bitch",
+                        "shut your bitch ass up",
+                        "shut the fuck up",
+                        "I suck",
+                        "I don't think this is the career for me",
+                        "this app is dumb",
+                        "i'm ready to interview",
+                        "i'll finish later",
+                        "stop",
+                        "close",
+                        "maybe I'll try again later",
+                        "yea never mind",
+                        "what kind of monster would think of this question",
+                        "i don't want to be a software developer",
+                        "close app",
+                        "I quit"
+                    ]
                 },
                 {
                     "name": "AMAZON.HelpIntent",
@@ -17,7 +35,18 @@
                 },
                 {
                     "name": "AMAZON.StopIntent",
-                    "samples": []
+                    "samples": [
+                        "i'm ready to interview",
+                        "i'll finish later",
+                        "stop",
+                        "close",
+                        "maybe I'll try again later",
+                        "yea never mind",
+                        "what kind of monster would think of this question",
+                        "i don't want to be a software developer",
+                        "close app",
+                        "I quit"
+                    ]
                 },
                 {
                     "name": "AMAZON.NavigateHomeIntent",
@@ -28,13 +57,7 @@
                     "slots": [
                         {
                             "name": "dataType",
-                            "type": "dataType",
-                            "samples": [
-                                "any",
-                                "string",
-                                "linked list",
-                                "array"
-                            ]
+                            "type": "dataType"
                         },
                         {
                             "name": "difficulty",
@@ -42,6 +65,11 @@
                         }
                     ],
                     "samples": [
+                        "give me a different question",
+                        "i don't like that question",
+                        "give me another question",
+                        "give me a question",
+                        "give me a new question",
                         "{dataType}",
                         "{difficulty} question about {dataType}",
                         "{difficulty} {dataType}",
@@ -51,6 +79,32 @@
                         "give me an {difficulty} {dataType} question",
                         "I'd like an {difficulty} question about {dataType}",
                         "ask me about {dataType} with difficulty {difficulty}"
+                    ]
+                },
+                {
+                    "name": "hintIntent",
+                    "slots": [
+                        {
+                            "name": "hintType",
+                            "type": "hintType"
+                        }
+                    ],
+                    "samples": [
+                        "please help",
+                        "can I get some help",
+                        "what's the {hintType} for this question",
+                        "{hintType}",
+                        "give me a hint about {hintType}",
+                        "give me a hint"
+                    ]
+                },
+                {
+                    "name": "solutionIntent",
+                    "slots": [],
+                    "samples": [
+                        "what's the solution",
+                        "i'm done with the challenge",
+                        "i'm done"
                     ]
                 }
             ],
@@ -93,6 +147,39 @@
                     "name": "difficulty",
                     "values": [
                         {
+                            "id": "hard",
+                            "name": {
+                                "value": "hard",
+                                "synonyms": [
+                                    "trickier",
+                                    "impossibile",
+                                    "harder",
+                                    "difficult"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "medium",
+                            "name": {
+                                "value": "medium",
+                                "synonyms": [
+                                    "average"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "easy",
+                            "name": {
+                                "value": "easy",
+                                "synonyms": [
+                                    "simpler",
+                                    "easier",
+                                    "simple"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "anydifficulty",
                             "name": {
                                 "value": "anyDifficulty",
                                 "synonyms": [
@@ -103,47 +190,55 @@
                             }
                         }
                     ]
-                }
-            ]
-        },
-        "dialog": {
-            "intents": [
+                },
                 {
-                    "name": "dataTypeIntent",
-                    "confirmationRequired": false,
-                    "prompts": {},
-                    "slots": [
+                    "name": "hintType",
+                    "values": [
                         {
-                            "name": "dataType",
-                            "type": "dataType",
-                            "confirmationRequired": false,
-                            "elicitationRequired": true,
-                            "prompts": {
-                                "elicitation": "Elicit.Slot.785015710117.1463604870904"
+                            "id": "question",
+                            "name": {
+                                "value": "repeat question",
+                                "synonyms": [
+                                    "what",
+                                    "repeat"
+                                ]
                             }
                         },
                         {
-                            "name": "difficulty",
-                            "type": "difficulty",
-                            "confirmationRequired": false,
-                            "elicitationRequired": false,
-                            "prompts": {}
+                            "id": "edgecases",
+                            "name": {
+                                "value": "edge cases",
+                                "synonyms": [
+                                    "edge",
+                                    "cases"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "bigospace",
+                            "name": {
+                                "value": "big o of space",
+                                "synonyms": [
+                                    "space",
+                                    "space complexity"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "bigotime",
+                            "name": {
+                                "value": "big o of time",
+                                "synonyms": [
+                                    "complexity",
+                                    "worst case",
+                                    "time",
+                                    "time complexity"
+                                ]
+                            }
                         }
                     ]
                 }
-            ],
-            "delegationStrategy": "ALWAYS"
-        },
-        "prompts": [
-            {
-                "id": "Elicit.Slot.785015710117.1463604870904",
-                "variations": [
-                    {
-                        "type": "PlainText",
-                        "value": "Please select a data structure."
-                    }
-                ]
-            }
-        ]
+            ]
+        }
     }
 }
