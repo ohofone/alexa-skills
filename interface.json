@@ -1,0 +1,244 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "big o of one",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "fuck meeeee",
+                        "you a bitch",
+                        "shut your bitch ass up",
+                        "shut the fuck up",
+                        "I suck",
+                        "I don't think this is the career for me",
+                        "this app is dumb",
+                        "i'm ready to interview",
+                        "i'll finish later",
+                        "stop",
+                        "close",
+                        "maybe I'll try again later",
+                        "yea never mind",
+                        "what kind of monster would think of this question",
+                        "i don't want to be a software developer",
+                        "close app",
+                        "I quit"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "i'm ready to interview",
+                        "i'll finish later",
+                        "stop",
+                        "close",
+                        "maybe I'll try again later",
+                        "yea never mind",
+                        "what kind of monster would think of this question",
+                        "i don't want to be a software developer",
+                        "close app",
+                        "I quit"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "dataTypeIntent",
+                    "slots": [
+                        {
+                            "name": "dataType",
+                            "type": "dataType"
+                        },
+                        {
+                            "name": "difficulty",
+                            "type": "difficulty"
+                        }
+                    ],
+                    "samples": [
+                        "give me a different question",
+                        "i don't like that question",
+                        "give me another question",
+                        "give me a question",
+                        "give me a new question",
+                        "{dataType}",
+                        "{difficulty} question about {dataType}",
+                        "{difficulty} {dataType}",
+                        "ask me about {dataType} ",
+                        "I'd like a question about {dataType}",
+                        "give me a {dataType} question",
+                        "give me an {difficulty} {dataType} question",
+                        "I'd like an {difficulty} question about {dataType}",
+                        "ask me about {dataType} with difficulty {difficulty}"
+                    ]
+                },
+                {
+                    "name": "hintIntent",
+                    "slots": [
+                        {
+                            "name": "hintType",
+                            "type": "hintType"
+                        }
+                    ],
+                    "samples": [
+                        "please help",
+                        "can I get some help",
+                        "what's the {hintType} for this question",
+                        "{hintType}",
+                        "give me a hint about {hintType}",
+                        "give me a hint"
+                    ]
+                },
+                {
+                    "name": "solutionIntent",
+                    "slots": [],
+                    "samples": [
+                        "what's the solution",
+                        "i'm done with the challenge",
+                        "i'm done"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "dataType",
+                    "values": [
+                        {
+                            "id": "string",
+                            "name": {
+                                "value": "string",
+                                "synonyms": [
+                                    "strings"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "linkedlist",
+                            "name": {
+                                "value": "linked list",
+                                "synonyms": [
+                                    "linked lists"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "array",
+                            "name": {
+                                "value": "array",
+                                "synonyms": [
+                                    "lists",
+                                    "list",
+                                    "arrays"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "difficulty",
+                    "values": [
+                        {
+                            "id": "hard",
+                            "name": {
+                                "value": "hard",
+                                "synonyms": [
+                                    "trickier",
+                                    "impossibile",
+                                    "harder",
+                                    "difficult"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "medium",
+                            "name": {
+                                "value": "medium",
+                                "synonyms": [
+                                    "average"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "easy",
+                            "name": {
+                                "value": "easy",
+                                "synonyms": [
+                                    "simpler",
+                                    "easier",
+                                    "simple"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "anydifficulty",
+                            "name": {
+                                "value": "anyDifficulty",
+                                "synonyms": [
+                                    "you pick",
+                                    "random",
+                                    "any"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "hintType",
+                    "values": [
+                        {
+                            "id": "question",
+                            "name": {
+                                "value": "repeat question",
+                                "synonyms": [
+                                    "what",
+                                    "repeat"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "edgecases",
+                            "name": {
+                                "value": "edge cases",
+                                "synonyms": [
+                                    "edge",
+                                    "cases"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "bigospace",
+                            "name": {
+                                "value": "big o of space",
+                                "synonyms": [
+                                    "space",
+                                    "space complexity"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "bigotime",
+                            "name": {
+                                "value": "big o of time",
+                                "synonyms": [
+                                    "complexity",
+                                    "worst case",
+                                    "time",
+                                    "time complexity"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
